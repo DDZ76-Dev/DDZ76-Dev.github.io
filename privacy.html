@@ -34,7 +34,8 @@
   <h2>Where it is stored</h2>
   <ul>
     <li>The sign-in tokens Google issues are stored only on your iPhone, in a file readable only by the video app.</li>
-    <li>Lists fetched from YouTube are kept in the app's memory while it is open and are not sent anywhere else.</li>
+    <li>Lists fetched from YouTube are kept in the app's memory for a few minutes while it is open, so returning to a list is quick, and are not sent anywhere else.</li>
+    <li>Your "For You" list (public video IDs only) and a list of which public videos are YouTube Shorts are saved on the iPhone, in a file readable only by the video app, so they show quickly next time.</li>
     <li>There is no server, database, or cloud storage run by the developer. The developer never receives your tokens or YouTube data.</li>
   </ul>
 
@@ -43,6 +44,7 @@
   <ul>
     <li><strong>Google</strong> (accounts.google.com, oauth2.googleapis.com, www.googleapis.com), for sign-in and the YouTube Data API.</li>
     <li><strong>Public video services</strong> that the video app already uses to look up and play public videos: a TubeRepair server (which provides video listings and playback for old devices) and the Return YouTube Dislike API (public like and dislike estimates). These receive only public video IDs or search words, the same as when you browse without signing in. They never receive your sign-in tokens, account details, or any information identifying you or your account.</li>
+    <li><strong>youtube.com</strong>, to leave Shorts out of your "For You" list: for short videos the app checks whether the public address <code>youtube.com/shorts/&lt;video ID&gt;</code> exists. Each check sends only one public video ID, without your sign-in tokens or any cookies.</li>
   </ul>
 
   <h2>Google API Services User Data Policy</h2>
